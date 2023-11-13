@@ -1,0 +1,83 @@
+
+<div *ngFor="let pokemon of pokemones let f = index" class="column is-one-third is-inline-block">
+    <div *ngIf="pokemon[0]==1 || pokemon[0]==2 || pokemon[0]==3" class="card has-background-success " >
+        <header class="card-header">
+        <p class="card-header-title">
+          Nº{{pokemon[0]}}
+        </p>
+          <p class="card-header-title">
+            {{pokemon[1]}}
+          </p>
+          
+        </header>
+        <div class="card-image">
+          <figure class="image is-16by9">
+            <img src="{{pokemon[2]}}" alt="Placeholder image">
+          </figure>
+        </div>
+        <div class="card-content ">
+          <div class="content " >
+            <h4 class="column is-inline-block"><strong>Categoria:</strong> {{pokemon[3]}}</h4>
+            <h4 class="column is-inline-block"><strong>Altura</strong> {{pokemon[4]}}</h4>
+            <h4 class="column is-inline-block"><strong>Habilidad:</strong> {{pokemon[6]}}</h4>
+            <h4 class="column is-inline-block"><strong>Peso:</strong> {{pokemon[5]}}</h4>
+            <h4><strong>tipo:</strong></h4>
+            <div *ngFor="let tipo of tiposPoke; let i = index">
+              <div *ngIf="(i+1)==pokemon[0]" >
+                <div *ngFor="let tiposP of tipo" class="column box has-background-info-dark is-inline-block m-1" >
+                    <h4>{{tiposP}}</h4>
+                </div>
+              </div>
+            </div>
+            <h4><strong>debilidades:</strong></h4>
+              <div *ngFor="let debil of debilidades; let j = index">
+                <div *ngIf="(j+1)==pokemon[0]" >
+                  <div *ngFor="let debilP of debil" class="column box has-background-success-dark is-inline-block m-1" >
+                      <h4>{{debilP}}</h4>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="pokemon[0]==4 || pokemon[0]==5 || pokemon[0]==6" class="card has-background-warning " >
+        <header class="card-header">
+          <p class="card-header-title">
+            Nº{{pokemon[0]}}
+          </p>
+            <p class="card-header-title">
+              {{pokemon[1]}}
+            </p>
+            
+          </header>
+          <div class="card-image">
+            <figure class="image is-16by9">
+              <img src="{{pokemon[2]}}" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="card-content ">
+            <div class="content " >
+              <h4 class="column is-inline-block"><strong>Categoria:</strong> {{pokemon[3]}}</h4>
+              <h4 class="column is-inline-block"><strong>Altura</strong> {{pokemon[4]}}</h4>
+              <h4 class="column is-inline-block"><strong>Habilidad:</strong> {{pokemon[6]}}</h4>
+              <h4 class="column is-inline-block"><strong>Peso:</strong> {{pokemon[5]}}</h4>
+              <h4><strong>tipo:</strong></h4>
+              <div *ngFor="let tipo of tiposPoke; let i = index">
+                <div *ngIf="(i+1)==pokemon[0]" >
+                  <div *ngFor="let tiposP of tipo" class="column box has-background-info-dark is-inline-block m-1" >
+                      <h4>{{tiposP}}</h4>
+                  </div>
+                </div>
+                
+              </div>
+              <h4><strong>debilidades:</strong></h4>
+              <div *ngFor="let debil of debilidades; let j = index">
+                <div *ngIf="(j+1)==pokemon[0]" >
+                  <div *ngFor="let debilP of debil" class="column box has-background-success-dark is-inline-block m-1" >
+                      <h4>{{debilP}}</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+</div>
